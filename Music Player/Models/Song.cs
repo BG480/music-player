@@ -22,5 +22,19 @@ namespace Music_Player.Models
             get { return _artist; }
             set { OnPropertyChanged(ref _artist, value); }
         }
+
+        private Genre _genre;
+        public Genre Genre
+        {
+            get { return _genre; }
+            set { OnPropertyChanged(ref _genre, value); }
+        }
+
+        private string _path;
+        public string Path
+        {
+            get { return _path; }
+            set { OnPropertyChanged(ref _path, value); }
+        }
     }
 }
