@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Song.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
     <Compile Include="Utility\RelayCommand.cs" />
