@@ -8,5 +8,8 @@ namespace Music_Player.Services
 {
     public interface IMediaService
     {
+        void Play(string mediaPath);
+        void Pause();
+        void Stop();
     }
 }
