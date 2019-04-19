@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\DetailsDialog.xaml.cs">
+      <DependentUpon>DetailsDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Song.cs" />
     <Compile Include="Services\IDataService.cs" />
@@ -68,6 +71,10 @@
     <Compile Include="Services\WindowDialogService.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
     <Compile Include="Utility\RelayCommand.cs" />
+    <Page Include="Dialogs\DetailsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
