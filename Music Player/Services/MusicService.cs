@@ -11,7 +11,7 @@ namespace Music_Player.Services
     {
         private MediaPlayer mediaPlayer;
 
-        MusicService()
+        public MusicService()
         {
             mediaPlayer = new MediaPlayer();
         }

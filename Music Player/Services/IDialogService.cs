@@ -10,5 +10,6 @@ namespace Music_Player.Services
     {
         string OpenFile(string filter);
         void ShowMessageBox(string title, string message);
+        object GetDetails();
     }
 }

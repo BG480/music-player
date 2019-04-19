@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Music_Player.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,16 @@ namespace Music_Player.Services
                 return dialog.FileName;
             }
 
+            return null;
+        }
+
+        public object GetDetails()
+        {
+            var dialog = new DetailsDialog();
+            if(dialog.ShowDialog() == true)
+            {
+                return new { Name = dialog.SongName, Artist = dialog.SongArtist, Genre = dialog.SongGenre };
+            }
             return null;
         }
 
