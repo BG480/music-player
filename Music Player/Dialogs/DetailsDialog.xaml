@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Music_Player.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="DetailsDialog" Height="200" Width="300">
-    <Grid Margin="10 10 10 10">
+        Title="Details" Height="200" Width="320" ResizeMode="NoResize" Background="#5CDB95" >
+    <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="220"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -18,15 +18,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14">Title</Label>
-        <Label Grid.Column="0" Grid.Row="1" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Artist</Label>
-        <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14">Genre</Label>
-        <TextBox Name="txtName" Grid.Column="1" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
-        <TextBox Name="txtArtist" Grid.Column="1" Grid.Row="1" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
-        <ComboBox Name="cmbGenre" Grid.Column="1" Grid.Row="2"></ComboBox>
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <Button Name="OkButton"  IsDefault="True" Content="OK" Margin="10 0 10 0 " Width="50" Click="OkButton_Click"/>
-            <Button IsCancel="True" Content="Cancel" Margin="10 0 10 0 " Width="50"/>
+        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource DetailsLabel}">Title</Label>
+        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource DetailsLabel}">Artist</Label>
+        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource DetailsLabel}">Genre</Label>
+        <TextBox Name="txtName" Grid.Column="1" Grid.Row="0" Style="{StaticResource DetailsTextBox}"  />
+        <TextBox Name="txtArtist" Grid.Column="1" Grid.Row="1" Style="{StaticResource DetailsTextBox}"/>
+        <ComboBox Name="cmbGenre" Grid.Column="1" Grid.Row="2" Style="{StaticResource DetailsComboBox}"/>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource DetailsStackPanel}">
+            <Button Name="OkButton"  IsDefault="True" Content="OK"  Click="OkButton_Click" Style="{StaticResource DetailsButton}"/>
+            <Button IsCancel="True" Content="Cancel" Style="{StaticResource DetailsButton}"/>
         </StackPanel>
 
     </Grid>

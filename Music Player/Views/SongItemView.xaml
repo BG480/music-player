@@ -13,9 +13,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="{Binding Name}"/>
-        <Label Grid.Row="1" Content="{Binding Artist}"/>
-        <Label Grid.Row="2" Content="{Binding Genre}" />
+        <Label Grid.Row="0" Content="{Binding Name}" Style="{StaticResource SongItemViewLabel}"/>
+        <Label Grid.Row="1" Content="{Binding Artist}" Style="{StaticResource SongItemViewLabel}"/>
+        <Label Grid.Row="2" Content="{Binding Genre}" Style="{StaticResource SongItemViewLabel}"/>
 
     </Grid>
 </UserControl>

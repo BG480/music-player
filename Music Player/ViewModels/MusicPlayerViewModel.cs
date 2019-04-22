@@ -27,7 +27,6 @@ namespace Music_Player.ViewModels
         public ObservableCollection<Song> Songs { get; private set; }
 
         public ICommand PlayCommand { get; private set; }
-        public ICommand PauseCommand { get; private set; }
         public ICommand StopCommand { get; private set; }
         public ICommand AddCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
@@ -39,7 +38,6 @@ namespace Music_Player.ViewModels
             _mediaService = mediaService;
 
             PlayCommand = new RelayCommand(Play, CanPlay);
-            PauseCommand = new RelayCommand(Pause, CanPause);
             StopCommand = new RelayCommand(Stop, CanStop);
             AddCommand = new RelayCommand(Add);
             DeleteCommand = new RelayCommand(Delete, CanDelete);
@@ -51,11 +49,7 @@ namespace Music_Player.ViewModels
         {
             _mediaService.Play(SelectedSong.Path);
         }
-
-        private void Pause()
-        {
-            _mediaService.Pause();
-        }
+            
 
         private void Stop()
         {
@@ -68,17 +62,21 @@ namespace Music_Player.ViewModels
             if(path != null)
             {
                 dynamic data = _dialogService.GetDetails();
-                var newSong = new Song
+                if(data != null)
                 {
-                    Name = data.Name,
-                    Artist = data.Artist,
-                    Genre = data.Genre,
-                    Path = path
-                };
+                    var newSong = new Song
+                    {
+                        Name = data.Name,
+                        Artist = data.Artist,
+                        Genre = data.Genre,
+                        Path = path
+                    };
 
-                Songs.Add(newSong);
-                SelectedSong = newSong;
-                SaveSongs();
+                    Songs.Add(newSong);
+                    SelectedSong = newSong;
+                    SaveSongs();
+                }
+                
             }
 
             
@@ -93,11 +91,6 @@ namespace Music_Player.ViewModels
         private bool CanPlay()
         {
             return SelectedSong == null ? false : true; 
-        }
-
-        private bool CanPause()
-        {
-            return CanPlay();
         }
 
         private bool CanStop()

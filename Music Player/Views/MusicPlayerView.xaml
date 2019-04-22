@@ -8,11 +8,11 @@
              d:DesignHeight="600" d:DesignWidth="400">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="0" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
+        <ListView Grid.Row="0" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}" Style="{StaticResource MusicPlayerViewListView}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <local:SongItemView/>
@@ -20,12 +20,11 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackPanel Grid.Row="1">
-            <Button Content="Play" Command="{Binding PlayCommand}"/>
-            <Button Content="Pause" Command="{Binding PauseCommand}"/>
-            <Button Content="Stop" Command="{Binding StopCommand}"/>
-            <Button Content="Add" Command="{Binding AddCommand}"/>
-            <Button Content="Delete" Command="{Binding DeleteCommand}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource MusicPlayerViewStackPanel}">
+            <Button Content="Play" Command="{Binding PlayCommand}" Style="{StaticResource MusicPlayerViewButton}" />
+            <Button Content="Stop" Command="{Binding StopCommand}" Style="{StaticResource MusicPlayerViewButton}"/>
+            <Button Content="Add" Command="{Binding AddCommand}" Style="{StaticResource MusicPlayerViewButton}"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}" Style="{StaticResource MusicPlayerViewButton}"/>
         </StackPanel>
     </Grid>
 </UserControl>
