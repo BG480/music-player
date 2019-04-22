@@ -11,7 +11,7 @@ namespace Music_Player.Services
 {
     public class JsonDataService : IDataService
     {
-        private readonly string _dataPath = "Resources/data.json";
+        private readonly string _dataPath = "data.json";
         public IEnumerable<Song> LoadSongs()
         {
             if (!File.Exists(_dataPath))
