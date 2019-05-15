@@ -1,13 +1,13 @@
 # Music Player
 > Simple music player for organizing music on PC.
 
-##General info
+## General info
 Application plays and stores info about mp3 files.
 
-##Screenshot
+## Screenshot
 ![Example screenshot](./img/screen.jpg)
 
-##Technologies
+## Technologies
 * C#
 * .NET Framework
 * WPF
