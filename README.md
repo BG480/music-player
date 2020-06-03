@@ -1,8 +1,8 @@
 # Music Player
-> Simple music player for organizing music on PC.
+> Simple music player prepared to familiarize with MVVM pattern and WPF technology.
 
 ## General info
-Application plays and stores info about mp3 files.
+Application can play .mp3 files stored on user's PC. 
 
 ## Screenshot
 ![Example screenshot](./img/screen.jpg)
